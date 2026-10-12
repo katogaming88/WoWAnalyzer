@@ -6,6 +6,7 @@ import ResourceUsage from './modules/guide/ResourceUsage';
 import DefensivesGuide from '../shared/Defensives';
 import DemonicTyrantGuide from './modules/guide/DemonicTyrantGuide';
 import { DemonicHealthstoneGuide } from '../shared/DHSGuide';
+import AplChoiceDescription from './modules/guide/AplChoiceDescription';
 
 export default function Guide({ modules, events, info }: GuideProps<typeof CombatLogParser>) {
   return (
@@ -20,7 +21,14 @@ export default function Guide({ modules, events, info }: GuideProps<typeof Comba
 }
 
 function CoreSection({ modules }: GuideProps<typeof CombatLogParser>) {
-  return <Section title="Core">{modules.alwaysBeCasting.guideSubsection}</Section>;
+  return (
+    <Section title="Core">
+      {modules.alwaysBeCasting.guideSubsection}
+      <Section title="Rotation">
+        <AplChoiceDescription />
+      </Section>
+    </Section>
+  );
 }
 
 function CooldownSection({ modules }: GuideProps<typeof CombatLogParser>) {

@@ -31,12 +31,14 @@ import SoulShardTracker from '../shared/resources/SoulShardTracker';
 import SoulShardGraph from '../shared/resources/SoulShardGraph';
 import { UnendingResolve, DarkPact, DemonicCircle, DemonicHealthstone } from '../shared';
 import Guide from './Guide';
+import AplCheck from './modules/features/AplCheck';
 
 class CombatLogParser extends CoreCombatLogParser {
   static specModules = {
     // Features
     abilities: Abilities,
     alwaysBeCasting: AlwaysBeCasting,
+    apl: AplCheck,
     cooldownThroughputTracker: CooldownThroughputTracker,
     legionStrike: LegionStrike,
     DemonicTyrant: DemonicTyrant,
